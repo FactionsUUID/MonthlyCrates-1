@@ -1,0 +1,7 @@
+name: MonthlyCrates
+main: org.minerbeef.monthlycrates.Core
+version: 1.14
+author: [Minerbeef, BourneDev]
+commands:
+  mcrate:
+    description: mcrates

@@ -1,0 +1,163 @@
+#Made by Minerbeef
+messages:
+  prefix: '&6&lMonthly&e&lCrates &8»&e '
+  no-perms: '%prefix%You don''t have permission to execute this command.'
+  config-reloaded: '%prefix%Config has successfully reloaded!'
+  invalid-usage: '%prefix%Incorrect usage.'
+  success-give: '%prefix%You have successfully given &6%amount%&ex &6%crate%&e Monthly Crates to &6%player%&e!'
+  success-give-other: '%prefix%You now have &6%amount%&ex &6%crate%&e more Monthly Crates!'
+  created-item: '%prefix%You have added your hand item to the crate! To remove it, go into the config and delete it.'
+  help-message:
+  - '&6/mcrate - view the crate storage'
+  - '&6/mcrate help - the help command'
+  - '&6/mcrate reload - reload the config'
+  - '&6/mcrate giveall <crate> <amount> - give all players a monthly crate'
+  - '&6/mcrate give <player> <crate> <amount> - give a player a monthly crate'
+  - '&6/mcrate addItem <crateName> <type:(normal or final)> <chance> <giveItem:(if false, command is used)> <command:(don''t put anything here if giveItem is true)>'
+  - '&6Permission needed to execute /mcrate: mcrates.storage'
+  - '&6Permission needed to execute other commands: mcrates.admin'
+storage-inv:
+  Name: "&8%crate#% Crates"
+  Size: 36
+sounds:
+  Open: "BAT_TAKEOFF"
+  Close: "LEVEL_UP"
+  Countdown: "NOTE_PIANO"
+crates:
+  January:
+    crate:
+      Material: "ENDER_CHEST"
+      Glow: false
+      ItemData: -1
+      Name: "&f&l** &b&lJanuary Crate &f&l**"
+      Lores:
+      - '&eUnlocked at shop.example.com by &n%player%'
+      - ''
+      - '&f&l&nADMIN ITEMS'
+      - '&f&l* &fNone'
+      - ''
+      - '&e&l&nPERKS'
+      - '&e&l* &eNone'
+      - ''
+      - '&6&l&nITEMS'
+      - '&6&l* &dMonthly Weapons'
+      - '&6&l* &dMonthly Tools'
+      - '&6&l* &2$10,000'
+    gui:
+      Name: "&8Crate: %name%"
+      not-redeemed:
+        Material: "ENDER_CHEST"
+        Glow: false
+        ItemData: -1
+        Amount: 1
+        Name: "&f&l???"
+        Lores:
+        - '&7Click to receive a random'
+        - '&7item from the crate.'
+      final-not-redeemable:
+        Material: "STAINED_GLASS_PANE"
+        PaneColor: "RED"
+        Glow: false
+        Amount: 1
+        Name: "&c&l???"
+        Lores:
+        - '&7You can''t open the final reward'
+        - '&7until you have redeemed all other rewards.'
+      animation:
+        Glow: false
+        ScrambleAnimationRunsPerItem: 10
+        FinalAnimationRuns: 6
+        animation-on-colors:
+        - "BLUE"
+        - "LIME"
+        - "ORANGE"
+        - "MAGENTA"
+        - "PINK"
+        - "YELLOW"
+        animation-off-color: "BLACK"
+    normal-rewards:
+      0:
+        Material: "DIAMOND_SWORD"
+        Amount: 1
+        Glow: false
+        ItemData: -1
+        GiveItem: true
+        Name: "&d&lMonthly Sword"
+        Lores:
+        - '&dDefinitely monthly.'
+        Enchantments:
+        - 'DAMAGE_ALL:1'
+        - 'DURABILITY:1'
+        Commands:
+        Chance: 50
+      1:
+        Material: "DIAMOND_AXE"
+        Amount: 1
+        Glow: false
+        ItemData: -1
+        GiveItem: true
+        Name: "&d&lMonthly Axe"
+        Lores:
+        - '&dDefinitely monthly.'
+        Enchantments:
+        - 'DAMAGE_ALL:1'
+        - 'DURABILITY:1'
+        Commands:
+        Chance: 50
+      2:
+        Material: "DIAMOND_SPADE"
+        Amount: 1
+        Glow: false
+        ItemData: -1
+        GiveItem: true
+        Name: "&d&lMonthly Shovel"
+        Lores:
+        - '&dDefinitely monthly.'
+        Enchantments:
+        - 'DAMAGE_ALL:1'
+        - 'DURABILITY:1'
+        Commands:
+        Chance: 50
+      3:
+        Material: "DIAMOND_PICKAXE"
+        Amount: 1
+        Glow: false
+        ItemData: -1
+        GiveItem: true
+        Name: "&d&lMonthly Pickaxe"
+        Lores:
+        - '&dDefinitely monthly.'
+        Enchantments:
+        - 'DAMAGE_ALL:1'
+        - 'DURABILITY:1'
+        Commands:
+        Chance: 50
+    final-rewards:
+      0:
+        Material: "PAPER"
+        Amount: 1
+        Glow: true
+        ItemData: -1
+        GiveItem: false
+        Name: "&a&l+ $10,000"
+        Lores:
+        - '&cFinal item!'
+        Enchantments:
+        Commands:
+        - 'eco give %player% 10000'
+        Chance: 50
+      1:
+        Material: "SKULL_ITEM"
+        SkullOwner: "BourneDev"
+        Amount: 1
+        GiveItem: true
+        Name: "&eSkull of BourneDev"
+        Lores:
+        - '&cLeave this developer a 5 star ;)'
+        Enchantments:
+        Commands:
+        Chance: 50
+time:
+  ScrambleAnimationSpeedInTicks: 3
+  FinalAnimationSpeedInTicks: 3
+once-per-item: false
